@@ -31,7 +31,6 @@ public class DatabaseOperation {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 String password = resultSet.getString("password");
-
                 if (password.equals(passwordString)) {
                     System.out.println("Username & Password are correct");
                 } else {

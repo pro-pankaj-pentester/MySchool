@@ -33,6 +33,7 @@ public class WarningFrame implements ActionListener {
         okayButton.setBounds(275, 120, 150, 40);
         okayButton.setFont(inter20);
         okayButton.setBackground(new Color(40, 40, 40));
+        okayButton.setFocusPainted(false);
         okayButton.setForeground(new Color(220, 220, 220));
         okayButton.setBorder(new LineBorder(new Color(100, 100, 100), 2, true));
         okayButton.addActionListener(this);

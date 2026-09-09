@@ -94,6 +94,7 @@ public class LoginFrame implements ActionListener {
         loginButton.setBackground(new Color(40, 40, 40));
         loginButton.setFont(inter20);
         loginButton.setBorder(new LineBorder(new Color(100, 100, 100), 2, true));
+        loginButton.setFocusPainted(false);
         loginButton.addActionListener(this);
         mainPanel.add(loginButton);
 
