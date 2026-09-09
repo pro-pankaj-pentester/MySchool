@@ -57,6 +57,7 @@ public class LoginFrame implements ActionListener {
         roleMenu.setFont(arial16);
         roleMenu.setBorder(new LineBorder(new Color(100, 100, 100), 2, true));
         roleMenu.setBackground(new Color(40, 40, 40));
+        roleMenu.setFocusable(false);
         roleMenu.setSelectedIndex(0);
         roleMenu.addActionListener(this);
         mainPanel.add(roleMenu);

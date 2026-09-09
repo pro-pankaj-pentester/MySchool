@@ -43,7 +43,6 @@ public class DatabaseOperation {
                 String warningMessage = "Error : Enter a valid Role.";
                 warningFrame.showWarningFrame(warningTitle, warningMessage);
             }
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
