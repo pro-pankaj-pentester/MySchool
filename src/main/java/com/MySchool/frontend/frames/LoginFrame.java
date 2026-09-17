@@ -135,5 +135,7 @@ public class LoginFrame implements ActionListener {
             databaseOperation.checkLogin(jobCode, enteredUsername, passwordString);
         }
     }
-
+    public void disposeFrame() {
+        loginFrame.dispose();
+    }
 }

@@ -1,7 +1,10 @@
 package com.MySchool.backend.database;
 
+import com.MySchool.frontend.frames.LoginFrame;
+import com.MySchool.frontend.frames.MainFrame;
 import com.MySchool.frontend.frames.WarningFrame;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
@@ -14,12 +17,16 @@ public class DatabaseOperation {
     DatabaseConnector databaseConnector;
     Connection connection;
     WarningFrame warningFrame;
+    MainFrame mainFrame;
+    LoginFrame loginFrame;
 
     @Autowired
-    DatabaseOperation (DatabaseConnector databaseConnector, WarningFrame warningFrame) {
+    DatabaseOperation (DatabaseConnector databaseConnector, WarningFrame warningFrame, MainFrame mainFrame, @Lazy LoginFrame loginFrame) {
         this.databaseConnector = databaseConnector;
         this.connection = databaseConnector.connectDatabase();
         this.warningFrame = warningFrame;
+        this.mainFrame = mainFrame;
+        this.loginFrame = loginFrame;
     }
 
     public void checkLogin(int jobCode, String enteredUsername, String passwordString) {
@@ -33,6 +40,8 @@ public class DatabaseOperation {
                 String password = resultSet.getString("password");
                 if (password.equals(passwordString)) {
                     System.out.println("Username & Password are correct");
+                    mainFrame.showMainFrame(jobCode, enteredUsername);
+                    loginFrame.disposeFrame();
                 } else {
                     String warningTitle = "Credential Error";
                     String warningMessage = "Wrong username or password";

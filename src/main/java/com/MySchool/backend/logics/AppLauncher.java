@@ -17,4 +17,5 @@ public class AppLauncher {
     public void launcherApp() {
         loginFrame.showLoginFrame();
     }
+
 }
