@@ -1,6 +1,5 @@
 package com.MySchool.frontend.frames;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
